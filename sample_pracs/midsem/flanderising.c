@@ -19,14 +19,16 @@
 
 
 /* EDIT THIS FUNCTION ONLY, DO NOT ADD ANY OTHER LIBRARIES */
-char * flanderise(char * input){
+char * flanderise(char * input, char * output){
 
 }
 /* ***************** */
 
 int main(){
     char input[200];
+    char output[1000];
     fgets(input, 200, stdin);
-    printf("Input String is:\n%s\nFlanderised String is:\n%s\n", input, flanderise(input));
+    flanderise(input, output);
+    printf("Input String is:\n%s\nFlanderised String is:\n%s\n", input, output);
     return 0;
 }
