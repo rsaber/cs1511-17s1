@@ -1,3 +1,5 @@
+// Practice question for my cs1511 class
+// I won't release solutions, you have to come to my thu13-sitar or fri09-sitar class
 /*
   Write a function that determines the order of an array. Return ASCENDING if ascending, DESCENDING if DESCENDING,
   or UNDETERMINED if neither. Adjacent duplicates are considered both ascending and descending.
