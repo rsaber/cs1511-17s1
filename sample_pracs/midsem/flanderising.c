@@ -19,7 +19,7 @@
 
 
 /* EDIT THIS FUNCTION ONLY, DO NOT ADD ANY OTHER LIBRARIES */
-char * flanderise(char * input, char * output){
+void flanderise(char * input, char * output){
 
 }
 /* ***************** */
