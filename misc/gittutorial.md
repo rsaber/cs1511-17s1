@@ -7,25 +7,42 @@ I highly recommend using git for your assignment, because I have seen so many ca
 ## Using GitHub
 Yeah, just follow the instructions to create a repo, make sure you have a student account so you can make a private repo. If you can't, try BitBucket or GitLab.
 
+## Creation the Repo
+A repo (short for repository) is just a online collection of your code, you can clone this code, edit it and then `push` those changes to the online version. It's quite similar to something like google drive or drop box but github tracks every change you make.
+This is amazing for when you mess up and all your code is broken because you can `revert` your code to any previous working version. 
+
+To create a repo you need to make a github account and then on the homepage find the large button saying "create a new repo". 
+It will ask you to name the repo and if you want a read me. Say yes to the readme file and give the repo a name. 
+Once done github will give you a link, something like `https://github.com/lol/---.git`. Copy this. 
+
 ## Cloning the Repo
-Once you've made a new repo, clone it with
+Once you've made a new repo, `cd` into some directory where you want the code to be and clone it with the following command
+
 ```
 git clone [the url you get from github]
 ```
 
-And you'll see that theres a fresh new repo on your local machine. `cd` into the new folder and start writing~
+And you'll see that theres a new folder on your local machine with just the readme file in it. `cd` into the new folder and start writing~
 
 ## Commiting changes
-When you've made a change, even the most minor change, you want to commit that change. So first, lets see if we have any unstaged changes
+When you've made a change or added some files, even the most minor change, you want to commit that change. The more often you commit and push your changes the more points you have to revert back to when things go wrong. you want to push often so any issue doesn't set you back too far. 
+
+So first, lets see if we have any unstaged changes
 ```
 git status
 ```
 Here, you can see any changes that you have made that are not commited yet. To commit them you
+
 ```
 git add [path to file]
 git commit -m [commit message]
 ```
-Make sure your commit messages make sense. Now you need to `push` your changes.
+Make sure your commit messages make sense. A ususal message may be something like 
+```
+git add my_code.c
+git commit -m"fixed the bug in the code that caused it to spit out garbage"
+```
+Now you need to `push` your changes so the remote/online version of your code gets updated.
 ```
 git push -u origin master
 ```
@@ -37,12 +54,51 @@ git log
 ```
 
 ## Going back in time
+Hopefully you never have to do this but if your code suddenly breaks badly it is sometimes a good idea to revert back to when it was working then rebuilt it up. 
+This is also useful if the code breaks close to the deadline. In this case reverting back to something that partially works and submitting that is better then submitting code that doesn't work at all. 
+
 You can do two things here, you can `reset` or you can `revert`. Resetting is not recommended, as it will actually delete your history, and you will lose content. Instead, you should `revert`, which will make a new commit that undo's the commits you don't want. 
 ```
 git revert [commit hash]
 ```
 To get the commit hash, use `git log`. It's the random string of numbers and letters (well, not really random). 
 
+## Typical use case
+
+So lets say i have a program (in a file called code.c) like such which is supposed to print out 
+the number 37
+
+```c
+#include <stdlib.h>
+
+int main(){
+  int x = 37;
+  printf("%c", x);
+}
+```
+
+i start by commiting my code to the already set up repo. 
+
+```
+git add code.c
+git commit -m"i wrote the code!"
+git push -u origin master
+```
+
+but oh no! i realised that my code doesn't work!
+i realise this is because if the printf line so i change it to
+```c
+printf("%d", x);
+```
+if i now do `git status` i get this out
+
+now that i've fixed it i update the remote code
+```
+git add code.c
+git commit -m"fixed a issue with printf"
+git push -u origin master
+```
+it's that easy. 
 ## Ending Notes
 Remember, this is the absolute fundamental basics  of `git`. There is so much more to `git`, but I'm sure that the above info is all you need to get by. As long as you really don't collasly fuck up.
 
