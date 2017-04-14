@@ -1,5 +1,7 @@
 # Git for your assignment
 
+# This is all UNOFFICIAL ADVICE! Follow this at your own risk, don't expect help from staff for this. But I'm sure they will try their best if you ask politely.
+
 I highly recommend using git for your assignment, because I have seen so many cases of accidental deletion of code, with no backups. Please, please, please learn to use git, the amount you need to know is so small, anyone can learn it.
 
 ## Using GitHub
