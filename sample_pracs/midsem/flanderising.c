@@ -10,7 +10,7 @@
   eg.
   "hello my name is bob" becomes "helloerino my namerino is boberino"
   "compile time" becomes "compilerino timerino"
-  "superman is anything but super i reckon" becomes "supermanerino is anythingerino buterino superino"
+  "superman is anything but super i reckon" becomes "supermanerino is anythingerino buterino superino i reckonerino"
 
   Note that "super" becomes "superino" and not "supererino"
 */
