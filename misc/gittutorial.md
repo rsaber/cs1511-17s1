@@ -90,8 +90,6 @@ i realise this is because if the printf line so i change it to
 ```c
 printf("%d", x);
 ```
-if i now do `git status` i get this out
-
 now that i've fixed it i update the remote code
 ```
 git add code.c
