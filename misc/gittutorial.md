@@ -7,13 +7,14 @@ I highly recommend using git for your assignment, because I have seen so many ca
 ## Using GitHub
 Yeah, just follow the instructions to create a repo, make sure you have a student account so you can make a private repo. If you can't, try BitBucket or GitLab.
 
-## Creation the Repo
-A repo (short for repository) is just a online collection of your code, you can clone this code, edit it and then `push` those changes to the online version. It's quite similar to something like google drive or drop box but github tracks every change you make.
-This is amazing for when you mess up and all your code is broken because you can `revert` your code to any previous working version. 
+## Creating the Repo
+A repo (short for repository) is just a online collection of your code, you can clone this code, edit it and then `push` those changes to the online version. It's similar to Google Drive or Dropbox but Git tracks every change you make.
+This allows you to quickly revert a change you made, or branch off with new experimental features you aren't too sure about.
 
-To create a repo you need to make a github account and then on the homepage find the large button saying "create a new repo". 
-It will ask you to name the repo and if you want a read me. Say yes to the readme file and give the repo a name. 
-Once done github will give you a link, something like `https://github.com/lol/---.git`. Copy this. 
+To create a repo you need to make a GitHub (/BitBucket/GitLab) account and then on the homepage find the large button saying "create a new repo". 
+It will ask you to name the repo and if you want a README file. Continue with the prompts, you can add a README at this stage if you want.
+ 
+Once done GitHub will give you a link, something like `https://github.com/username/---.git`. Copy this. 
 
 ## Cloning the Repo
 Once you've made a new repo, `cd` into some directory where you want the code to be and clone it with the following command
@@ -65,38 +66,46 @@ To get the commit hash, use `git log`. It's the random string of numbers and let
 
 ## Typical use case
 
-So lets say i have a program (in a file called code.c) like such which is supposed to print out 
-the number 37
+Lets say that I have some file called `code.c`, which is meant to print out the number 37. I go ahead and write down the following:
 
 ```c
 #include <stdlib.h>
 
 int main(){
   int x = 37;
-  printf("%c", x);
+  printf("%d", x);
 }
 ```
 
-i start by commiting my code to the already set up repo. 
+Now that I've made a change, I should commit that change.
 
 ```
 git add code.c
-git commit -m"i wrote the code!"
+git commit -m "i wrote the code!"
 git push -u origin master
 ```
 
-but oh no! i realised that my code doesn't work!
-i realise this is because if the printf line so i change it to
+Now, I realise I want my user to pick whatever number they want to print out. So I need to add some new functionality.
+
 ```c
-printf("%d", x);
+#include <stdlib.h>
+
+int main(){
+  int x;
+  scanf("%d", &x);
+  printf("%d", x);
+}
+
 ```
-now that i've fixed it i update the remote code
+Now that I've added my new functionality, I now need to commit the new change.
 ```
 git add code.c
-git commit -m"fixed a issue with printf"
+git commit -m "Add ability to enter number"
 git push -u origin master
 ```
-it's that easy. 
+
+And thats it.
+
 ## Ending Notes
 Remember, this is the absolute fundamental basics  of `git`. There is so much more to `git`, but I'm sure that the above info is all you need to get by. As long as you really don't collasly fuck up.
 
