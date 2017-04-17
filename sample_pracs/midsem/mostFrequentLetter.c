@@ -30,16 +30,18 @@ void findFreqs(char * string){
 	int max = 0;
 	char maxLetter = 0;
 	for(i=0; i<26; i++){
-		if(max < freqs[i])
+		if(max < freqs[i]){
 			max = freqs[i];
 			maxLetter = i + 'a';
+		}
 	}
-	printf("Most frequently occuring letter is %c, occuring %lf\% of the time. \n", maxLetter, max/total);
+	printf("Most frequently occuring letter is %c, occuring %lf of the time. \n", maxLetter, (float) max/total);
 }
 
 int main(int argc, char **argv){
-	if(argc < 1){
-		printf("No Argument! To runL $ ./%s \"[sentence]\"\n", argv[0]);
+	if(argc != 2){
+		printf("No Argument! To run $ %s \"[sentence]\"\n", argv[0]);
+		return 1;
 	}
 	findFreqs(argv[1]);
 	return 0;
