@@ -10,7 +10,7 @@
   eg.
   "hello my name is bob" becomes "helloerino my namerino is boberino"
   "compile time" becomes "compilerino timerino"
-  "superman is anything but super i reckon" becomes "supermanerino is anythingerino but superino"
+  "superman is anything but super i reckon" becomes "supermanerino is anythingerino buterino superino i reckonerino"
 
   Note that "super" becomes "superino" and not "supererino"
 */
@@ -19,14 +19,23 @@
 
 
 /* EDIT THIS FUNCTION ONLY, DO NOT ADD ANY OTHER LIBRARIES */
-char * flanderise(char * input){
+/* You may add other functions (in fact, I highly recommend it) */
+void flanderise(char * input, char * output){
 
 }
 /* ***************** */
 
+void stripNewLine(char * s){
+  for(;*s!=0; s++);
+  *(s-1) = 0;
+}
+
 int main(){
     char input[200];
+    char output[1000] ={0};
     fgets(input, 200, stdin);
-    printf("Input String is:\n%s\nFlanderised String is:\n%s\n", input, flanderise(input));
+    stripNewLine(input);
+    flanderise(input, output);
+    printf("Input String is:\n%s\nFlanderised String is:\n%s\n", input, output);
     return 0;
 }
