@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int mystrlen(char * s){return *s == '\n' ? 0 : 1 + mystrlen(s+1);}
+int mystrlen(char * s){return !*s ? 0 : 1 + mystrlen(s+1);}
+
+
 
 int main(){
 	char string[4096];
