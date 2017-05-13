@@ -35,4 +35,10 @@ Node duplicateList(Node head);
 Node get(Node head, int index);
 Node getFromEnd(Node head, int index);
 Node reverse(Node head);
+Node inplaceMerge(Node listA, Node listB);
+
+// Here's the harder fun stuff
 int isCycle(Node head);
+Node pairwiseSwap(Node head);
+Node zip(Node listA, Node listB);
+Node sum(Node numberA, Node numberB);

@@ -27,6 +27,24 @@ Node reverse(Node head){
 	return NULL;
 }
 
+Node inplaceMerge(Node listA, Node listB){
+	return NULL;
+}
+
+/* The harder fun stuff starts here */
+
 int isCycle(Node head){
 	return FALSE;
+}
+
+Node pairwiseSwap(Node head){
+	return NULL;
+}
+
+Node zip(Node listA, Node listB){
+	return NULL;
+}
+
+Node sum(Node numberA, Node numberB){
+	return NULL;
 }
