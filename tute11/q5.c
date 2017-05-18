@@ -1,4 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
+struct student{
+    int zid;
+    char name[50];
+    char labname[50];
+    char grades[50];
+    struct student *next;
+};
+typedef struct student * Student;
+Student insertAtFront(Student list, Student node);
+struct student * read_students_file(char *       filename);
+Student makeStudent(char *line);
+struct student *read_student(FILE *fp);
 
 
 
@@ -10,7 +25,7 @@ struct student * read_students_file(char *       filename){
 	return r;
 }
 
-typedef struct student * Student;
+
 
 Student insertAtFront(Student list, Student node){
 	if(!node) return list;
@@ -20,17 +35,19 @@ Student insertAtFront(Student list, Student node){
 }
 
 Student makeStudent(char *line){
-	char * zid, name, lab, grads;
+	char * zid, *firstname, *lab, *grads, *lastname;
 
 	zid = line;
-	name = strchr(zid, ' ');
-	name[0] = '\0';
-	name++;
+	firstname = strchr(zid, ' ');
+	firstname[0] = '\0';
+	firstname++;
+    
+    lastname = strchr(firstname, ' ');
+    lastname[0] = '\0';
+    lastname++;
 
-	lab = strchr(name, ' ')+1;
-	lab = strchr(lab, ' ' );
+	lab = strchr(lastname, ' ' );
 	*lab = '\0';
-
 	lab++;
 
 	grads = strchr(lab, ' ');
@@ -41,8 +58,8 @@ Student makeStudent(char *line){
 	Student s = malloc(sizeof(struct student));
 
 	s->zid = atoi(zid);
-	strcpy(s->name, name);
-	strcpy(s->lab, lab);
+	strcpy(s->name, lastname);
+	strcpy(s->labname, lab);
 	strcpy(s->grades, grads);
 
 	s->next = NULL;
@@ -57,7 +74,9 @@ struct student *read_student(FILE *fp){
 
 	char buffer[100];
 	while(fgets(buffer,100,fp)){
+
 		Student newStudent = makeStudent(buffer);
+        
 		list = insertAtFront(list, newStudent);
 	}
 
@@ -67,5 +86,5 @@ struct student *read_student(FILE *fp){
 
 int main(){
 	Student s = read_students_file("hello");
-	printf("%d, %s, %s, %s, %p\n", s->zid, s->name, s->	
+	printf("%d, %s, %s, %s, %p\n", s->zid, s->name, s->labname, s->grades, s->next);
 }
