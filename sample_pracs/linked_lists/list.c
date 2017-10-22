@@ -27,6 +27,7 @@ Node reverse(Node head){
 	return NULL;
 }
 
+/* Merge two sorted linked lists together such that the resultant linked list is sorted. listB should be empty after merge */
 Node inplaceMerge(Node listA, Node listB){
 	return NULL;
 }
@@ -45,6 +46,20 @@ Node zip(Node listA, Node listB){
 	return NULL;
 }
 
+/* Sum up two numbers represented as linked lists where each node is a digit*/
 Node sum(Node numberA, Node numberB){
 	return NULL;
 }
+
+/* Do not allocate any extra space! */
+int isPalindrome(Node list){
+	return NULL;
+}
+
+/* Sort a linked list, use any sorting algo you want */
+Node sort(Node head){
+	return NULL;
+}
+
+
+
