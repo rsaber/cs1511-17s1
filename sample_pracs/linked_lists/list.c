@@ -61,5 +61,11 @@ Node sort(Node head){
 	return NULL;
 }
 
-
+/*
+ * Takes in a linked list and doubles the value 
+ * in each node, i.e multiply it by 2 don't square it. 
+ */
+void doubleList(List l) { 
+	
+}
 
