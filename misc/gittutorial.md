@@ -7,6 +7,21 @@ I highly recommend using git for your assignment, because I have seen so many ca
 ## Using GitHub
 Yeah, just follow the instructions to create a repo, make sure you have a student account so you can make a private repo. If you can't, try BitBucket or GitLab.
 
+## Basic Idea
+
+The way github works is that you have 2 areas where your code can be
+
+1. Your local system
+2. The github servers
+
+When you edit your local version you can `commit` your changes periodcally which is similar to copying your code at regular intervals into folders called `backup1` and `backup2`
+
+This is useful cause you can back up if you ever want to go back to a previous version of code. Of course this isn't useful if your hard drive crashes or you need to share the code with a partner. That is when you `push` your code. This takes all of your commits and pushes them to the github server. 
+
+That server version can then be `pulled` by a partner so they can see / edit what you are doing and in the same way your partner can push changes to the server that you can then pull onto your local system to work with. 
+
+Commiting you can do whenever, such as on a train, Pushing requires a internet connection so it can connect with the github servers. 
+
 ## Creating the Repo
 A repo (short for repository) is just a online collection of your code, you can clone this code, edit it and then `push` those changes to the online version. It's similar to Google Drive or Dropbox but Git tracks every change you make.
 This allows you to quickly revert a change you made, or branch off with new experimental features you aren't too sure about.
@@ -105,6 +120,17 @@ git push -u origin master
 ```
 
 And thats it.
+
+Now lets say i am another person on this repo who wants to get all of these awesome codes that have been pushed into the repo. 
+All i need to do is go into the folder where the code is and say 
+
+```
+git pull
+```
+
+This `pulls` the most recent version of the code on github onto the local system. 
+Of course if you have written some code and then try to pull, github will try and `merge` these changes. If you are working on different things this usually goes without a hitch. If you both have different versions of the same bit of code though you have a `clash`.
+This is a bit more involved to clean up but basically involves the person who is pulling to first decide which parts of the two versions (their own and the version on github) to keep. Googling `merge conflicts` will bring up some helpful articles on possible ways to handle this. 
 
 ## Ending Notes
 Remember, this is the absolute fundamental basics  of `git`. There is so much more to `git`, but I'm sure that the above info is all you need to get by. As long as you really don't collasly fuck up.
